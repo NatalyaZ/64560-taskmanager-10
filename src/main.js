@@ -1,3 +1,5 @@
+`use strict`;
+
 const TASK_COUNT = 3;
 
 const renderHeaderMenuTemplate = () => (
@@ -450,21 +452,20 @@ const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template());
 };
 
-const siteMainElement = document.querySelector('.main');
-const siteHeaderElement = siteMainElement.querySelector('.main__control');
-render(siteHeaderElement, renderHeaderMenuTemplate, 'beforeend');
+const siteMainElement = document.querySelector(`.main`);
+const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
+render(siteHeaderElement, renderHeaderMenuTemplate, `beforeend`);
+render(siteMainElement, renderFiltersTemplate, `beforeend`);
+render(siteMainElement, renderBoardTemplate, `beforeend`);
 
-render(siteMainElement, renderFiltersTemplate, 'beforeend');
-render(siteMainElement, renderBoardTemplate, 'beforeend');
+const siteBoardElement = siteMainElement.querySelector(`.board`);
+render(siteBoardElement, renderBoardFilterTemplate, `afterbegin`);
 
-const siteBoardElement = siteMainElement.querySelector('.board');
-render(siteBoardElement, renderBoardFilterTemplate, 'afterbegin');
+const taskListTemplate = siteBoardElement.querySelector(`.board__tasks`);
+render(taskListTemplate, renderAddEditTaskTemplate, `beforeend`);
 
-const taskListTemplate = siteBoardElement.querySelector('.board__tasks');
-render(taskListTemplate, renderAddEditTaskTemplate, 'beforeend');
-
-for (let i = 0; i < 3; i++) {
-  render(taskListTemplate, renderTaskTemplate, 'beforeend')
+for (let i = 0; i < TASK_COUNT; i++) {
+  render(taskListTemplate, renderTaskTemplate, `beforeend`)
 }
 
-render(siteBoardElement, renderLoadMoreButtonTemplate, 'beforeend');
+render(siteBoardElement, renderLoadMoreButtonTemplate, `beforeend`);
