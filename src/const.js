@@ -16,3 +16,9 @@ export const MonthNames = [
 ];
 
 export const Days = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
+
+export const BoardFilters = [
+  `SORT BY DEFAULT`,
+  `SORT BY DATE up`,
+  `SORT BY DATE down`
+]

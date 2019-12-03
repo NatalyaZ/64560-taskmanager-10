@@ -1,6 +1,6 @@
 import { renderHeaderMenuTemplate } from './components/menu';
 import { renderFiltersTemplate } from './components/filters';
-import { renderBoardTemplate, renderBoardFilterTemplate } from './components/board';
+import { renderBoardTemplate } from './components/board';
 import { renderTaskTemplate } from './components/task';
 import { renderAddEditTaskTemplate } from './components/add-edit-task';
 import { renderLoadMoreButtonTemplate } from './components/load-more-button';
@@ -23,7 +23,6 @@ render(siteMainElement, renderFiltersTemplate(filters), `beforeend`);
 render(siteMainElement, renderBoardTemplate(), `beforeend`);
 
 const siteBoardElement = siteMainElement.querySelector(`.board`);
-render(siteBoardElement, renderBoardFilterTemplate(), `afterbegin`);
 
 const tasks = generateTasks(TASK_COUNT);
 const taskListTemplate = siteBoardElement.querySelector(`.board__tasks`);
