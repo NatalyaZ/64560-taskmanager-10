@@ -1,4 +1,4 @@
-import {BoardFilters} from '../const';
+import {BOARD_FILTERS} from '../const';
 
 const createBoardFilterMarkup = (filter) => (
   `<a href="#" class="board__filter">${filter}</a>`
@@ -13,7 +13,7 @@ const createBoardFiltersMarkup = (filters) => {
 }
 
 export const renderBoardTemplate = () => {
-  const boardFiltersMarkup = createBoardFiltersMarkup(BoardFilters);
+  const boardFiltersMarkup = createBoardFiltersMarkup(BOARD_FILTERS);
 
   return (
     `<section class="board container">

@@ -1,6 +1,6 @@
-export const Colors = [`black`, `blue`, `yellow`, `green`, `pink`];
+export const COLORS = [`black`, `blue`, `yellow`, `green`, `pink`];
 
-export const MonthNames = [
+export const MONTH_NAMES = [
   `January`,
   `February`,
   `March`,
@@ -15,9 +15,9 @@ export const MonthNames = [
   `December`
 ];
 
-export const Days = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
+export const DAYS = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
 
-export const BoardFilters = [
+export const BOARD_FILTERS = [
   `SORT BY DEFAULT`,
   `SORT BY DATE up`,
   `SORT BY DATE down`

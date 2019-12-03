@@ -1,4 +1,4 @@
-import {MonthNames} from '../const';
+import {MONTH_NAMES} from '../const';
 import {formatTime} from '../utils';
 
 
@@ -22,7 +22,7 @@ export const renderTaskTemplate = (task) => {
   const isExpired = dueDate instanceof Date && dueDate < Date.now();
   const isDateShowing = !!dueDate;
 
-  const date = isDateShowing ? `${dueDate.getDate()} ${MonthNames[dueDate.getMonth()]}` : ``;
+  const date = isDateShowing ? `${dueDate.getDate()} ${MONTH_NAMES[dueDate.getMonth()]}` : ``;
   const time = isDateShowing ? formatTime(dueDate) : ``;
 
   const hashtags = createHashtagsMarkup(tags);
