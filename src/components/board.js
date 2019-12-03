@@ -1,13 +1,24 @@
-export const renderBoardTemplate = () => (
-  `<section class="board container">
-    <div class="board__tasks"></div>
-  </section>`
+import {BoardFilters} from '../const';
+
+const createBoardFilterMarkup = (filter) => (
+  `<a href="#" class="board__filter">${filter}</a>`
 );
 
-export const renderBoardFilterTemplate = () => (
-  `<div class="board__filter-list">
-    <a href="#" class="board__filter">SORT BY DEFAULT</a>
-    <a href="#" class="board__filter">SORT BY DATE up</a>
-    <a href="#" class="board__filter">SORT BY DATE down</a>
-  </div>`
-);
+const createBoardFiltersMarkup = (filters) => {
+  return (
+    `<div class="board__filter-list">
+      ${filters.map(createBoardFilterMarkup).join(`\n`)}
+    </div>`
+  )
+}
+
+export const renderBoardTemplate = () => {
+  const boardFiltersMarkup = createBoardFiltersMarkup(BoardFilters);
+
+  return (
+    `<section class="board container">
+      ${boardFiltersMarkup}
+      <div class="board__tasks"></div>
+    </section>`
+  )
+};
