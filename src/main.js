@@ -1,11 +1,11 @@
-import { renderHeaderMenuTemplate } from './components/menu';
-import { renderFiltersTemplate } from './components/filters';
-import { renderBoardTemplate } from './components/board';
-import { renderTaskTemplate } from './components/task';
-import { renderAddEditTaskTemplate } from './components/add-edit-task';
-import { renderLoadMoreButtonTemplate } from './components/load-more-button';
-import { generateFilters } from './mock/filter';
-import { generateTasks } from './mock/task';
+import {renderHeaderMenuTemplate} from './components/menu';
+import {renderFiltersTemplate} from './components/filters';
+import {renderBoardTemplate} from './components/board';
+import {renderTaskTemplate} from './components/task';
+import {renderAddEditTaskTemplate} from './components/add-edit-task';
+import {renderLoadMoreButtonTemplate} from './components/load-more-button';
+import {generateFilters} from './mock/filter';
+import {generateTasks} from './mock/task';
 
 
 const TASK_COUNT = 22;
@@ -41,7 +41,7 @@ loadMoreButton.addEventListener(`click`, () => {
 
   tasks.slice(prevTasksCount, showingTasksCount)
     .forEach((task) => render(taskListTemplate, renderTaskTemplate(task), `beforeend`));
-  
+
   if (showingTasksCount >= tasks.length) {
     loadMoreButton.remove();
   }

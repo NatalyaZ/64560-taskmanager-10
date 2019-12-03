@@ -1,4 +1,4 @@
-import { COLORS } from '../const';
+import {COLORS} from '../const';
 
 
 const DescriptionItems = [
@@ -33,7 +33,7 @@ const getRandomArrayItem = (array) => {
   const randomIndex = getRandomIntegerNumber(0, array.length);
 
   return array[randomIndex];
-}
+};
 
 const getRandomDate = () => {
   const targetDate = new Date();
@@ -49,7 +49,9 @@ const generateRepeatingDays = () => {
   let days = {};
 
   for (let prop in DefaultRepeatingDays) {
-    days[prop] = Math.random() > 0.8;
+    if (DefaultRepeatingDays.hasOwnProperty(prop)) {
+      days[prop] = Math.random() > 0.8;
+    }
   }
 
   return days;
@@ -72,7 +74,7 @@ const generateTask = () => {
     color: getRandomArrayItem(COLORS),
     isFavorite: Math.random() > 0.5,
     isArchive: Math.random() > 0.5
-  }
+  };
 };
 
 const generateTasks = (count) => {

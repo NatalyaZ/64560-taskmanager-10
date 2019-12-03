@@ -9,8 +9,8 @@ const createBoardFiltersMarkup = (filters) => {
     `<div class="board__filter-list">
       ${filters.map(createBoardFilterMarkup).join(`\n`)}
     </div>`
-  )
-}
+  );
+};
 
 export const renderBoardTemplate = () => {
   const boardFiltersMarkup = createBoardFiltersMarkup(BOARD_FILTERS);
@@ -20,5 +20,5 @@ export const renderBoardTemplate = () => {
       ${boardFiltersMarkup}
       <div class="board__tasks"></div>
     </section>`
-  )
+  );
 };

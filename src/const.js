@@ -21,4 +21,4 @@ export const BOARD_FILTERS = [
   `SORT BY DEFAULT`,
   `SORT BY DATE up`,
   `SORT BY DATE down`
-]
+];
