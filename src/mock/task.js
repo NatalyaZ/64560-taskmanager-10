@@ -30,7 +30,7 @@ const getRandomIntegerNumber = (min, max) => {
 };
 
 const getRandomArrayItem = (array) => {
-  const randomIndex = getRandomIntegerNumber(0, array,length);
+  const randomIndex = getRandomIntegerNumber(0, array.length);
 
   return array[randomIndex];
 }

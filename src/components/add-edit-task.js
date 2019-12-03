@@ -53,7 +53,7 @@ const createHashtagMarkup = (tag) => {
 };
 
 const createHashtagsMarkup = (tags) => {
-  const list = tags.map(createHashtagMarkup).join(`\n`);
+  const list = Array.from(tags).map(createHashtagMarkup).join(`\n`);
   return (
     `<div class="card__hashtag-list">
       ${list}

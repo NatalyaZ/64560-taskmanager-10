@@ -13,7 +13,7 @@ const createHashtagsMarkup = (hashtags) => {
         </span>`
       );
     })
-    .joun(`\n`);
+    .join(`\n`);
 };
 
 export const renderTaskTemplate = (task) => {
