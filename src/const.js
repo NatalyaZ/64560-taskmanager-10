@@ -22,3 +22,5 @@ export const BOARD_FILTERS = [
   `SORT BY DATE up`,
   `SORT BY DATE down`
 ];
+
+export const TASK_COUNT = 22;

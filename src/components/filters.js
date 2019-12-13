@@ -1,9 +1,9 @@
 
 const generateFilterMarkup = (filter, isChecked) => {
-  const {name, count} = filter;
+  const {title, count} = filter;
 
-  const id = `filter__${name}`;
-  const classCount = `filter__${name}-count`;
+  const id = `filter__${title}`;
+  const classCount = `filter__${title}-count`;
 
   const isDisabled = count === 0 ? `disabled` : ``;
 
@@ -17,7 +17,7 @@ const generateFilterMarkup = (filter, isChecked) => {
       ${isDisabled}
     />
     <label for="${id}" class="filter__label">
-      ${name} <span class="${classCount}">${count}</span></label
+      ${title} <span class="${classCount}">${count}</span></label
     >`
   );
 };
