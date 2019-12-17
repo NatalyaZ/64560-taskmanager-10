@@ -24,3 +24,8 @@ export const BOARD_FILTERS = [
 ];
 
 export const TASK_COUNT = 22;
+
+export const RenderPosition = {
+  AFTERBEGIN: `afterbegin`,
+  BEFOREEND: `beforeend`
+};
