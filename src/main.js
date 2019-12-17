@@ -1,5 +1,5 @@
 import {HeaderMenu} from './components/menu';
-import {renderFiltersTemplate} from './components/filters';
+import {Filters} from './components/filters';
 import {Board} from './components/board';
 import {renderTaskTemplate} from './components/task';
 import {renderAddEditTaskTemplate} from './components/add-edit-task';
@@ -16,13 +16,11 @@ const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
-const headerMenu = new HeaderMenu();
-render(siteHeaderElement, headerMenu.getElement());
+render(siteHeaderElement, new HeaderMenu().getElement());
 
 const filters = generateFilters();
-render(siteMainElement, renderFiltersTemplate(filters));
-const board = new Board();
-render(siteMainElement, board.getElement(), RenderPosition.AFTERBEGIN);
+render(siteMainElement, new Filters(filters).getElement());
+render(siteMainElement, new Board().getElement(), RenderPosition.AFTERBEGIN);
 
 const siteBoardElement = siteMainElement.querySelector(`.board`);
 
