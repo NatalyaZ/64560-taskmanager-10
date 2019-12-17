@@ -1,8 +1,8 @@
 import {HeaderMenu} from './components/menu';
 import {Filters} from './components/filters';
 import {Board} from './components/board';
-import {renderTaskTemplate} from './components/task';
-import {renderAddEditTaskTemplate} from './components/add-edit-task';
+import {Task} from './components/task';
+import {TaskEdit} from './components/add-edit-task';
 import {renderLoadMoreButtonTemplate} from './components/load-more-button';
 import {generateFilters} from './mock/filter';
 import {generateTasks} from './mock/task';
@@ -26,9 +26,9 @@ const siteBoardElement = siteMainElement.querySelector(`.board`);
 
 const tasks = generateTasks(TASK_COUNT);
 const taskListTemplate = siteBoardElement.querySelector(`.board__tasks`);
-render(taskListTemplate, renderAddEditTaskTemplate(tasks[0]));
+render(taskListTemplate, new TaskEdit(tasks[0]).getElement());
 let showingTasksCount = SHOWING_TASKS_COUNT_ON_START;
-tasks.slice(1, showingTasksCount).forEach((task) => render(taskListTemplate, renderTaskTemplate(task)));
+tasks.slice(1, showingTasksCount).forEach((task) => render(taskListTemplate, new Task(task).getElement(), RenderPosition.AFTERBEGIN));
 
 render(siteBoardElement, renderLoadMoreButtonTemplate());
 
