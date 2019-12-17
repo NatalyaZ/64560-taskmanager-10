@@ -1,4 +1,4 @@
-import {renderHeaderMenuTemplate} from './components/menu';
+import {HeaderMenu} from './components/menu';
 import {renderFiltersTemplate} from './components/filters';
 import {Board} from './components/board';
 import {renderTaskTemplate} from './components/task';
@@ -16,7 +16,8 @@ const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
-render(siteHeaderElement, renderHeaderMenuTemplate());
+const headerMenu = new HeaderMenu();
+render(siteHeaderElement, headerMenu.getElement());
 
 const filters = generateFilters();
 render(siteMainElement, renderFiltersTemplate(filters));

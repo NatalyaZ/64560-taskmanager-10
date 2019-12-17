@@ -1,4 +1,7 @@
-export const renderHeaderMenuTemplate = () => (
+import {createElement} from '../utils';
+
+
+const renderHeaderMenuTemplate = () => (
   `<section class="control__btn-wrap">
     <input
       type="radio"
@@ -28,3 +31,25 @@ export const renderHeaderMenuTemplate = () => (
     >
   </section>`
 );
+
+export class HeaderMenu {
+  constructor() {
+    this._element = null;
+  }
+
+  getTemplate() {
+    return renderHeaderMenuTemplate();
+  }
+
+  getElement() {
+    if (this._element === null) {
+      this._element = createElement(this.getTemplate());
+    }
+
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}
