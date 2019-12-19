@@ -53,6 +53,9 @@ const createHashtagMarkup = (tag) => {
 };
 
 const createHashtagsMarkup = (tags) => {
+  if (!tags) {
+    return ``;
+  }
   const list = Array.from(tags).map(createHashtagMarkup).join(`\n`);
   return (
     `<div class="card__hashtag-list">
@@ -99,11 +102,16 @@ const renderAddEditTaskTemplate = (task) => {
   const date = isDateShowing ? `${dueDate.getDate()} ${MONTH_NAMES[dueDate.getMonth()]}` : ``;
   const time = isDateShowing ? formatTime(dueDate) : ``;
 
-  const repeatingDaysMarkup = createRepeatingDaysMarkup(DAYS, repeatingDays);
   const hashtagsMarkup = createHashtagsMarkup(tags);
   const colorsMarkup = createColorsMarkup(COLORS);
 
-  const isRepeatingTask = Object.values(repeatingDays).some(Boolean);
+  let isRepeatingTask = false;
+  let repeatingDaysMarkup = ``;
+  if (repeatingDays) {
+    isRepeatingTask = Object.values(repeatingDays).some(Boolean);
+    repeatingDaysMarkup = createRepeatingDaysMarkup(DAYS, repeatingDays);
+  }
+
   const repeatClass = isRepeatingTask ? `card--repeat` : ``;
   const deadlineClass = isExpired ? `card--deadline` : ``;
 
