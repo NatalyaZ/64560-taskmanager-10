@@ -1,6 +1,4 @@
-const filterTitles = [
-  `all`, `overdue`, `today`, `favorites`, `repeating`, `tags`, `archive`
-];
+import {filterTitles} from '../const';
 
 const generateFilters = () => {
   return filterTitles.map((f) => {

@@ -6,12 +6,8 @@ import {TaskEdit} from './components/add-edit-task';
 import {LoadMoreButton} from './components/load-more-button';
 import {generateFilters} from './mock/filter';
 import {generateTasks} from './mock/task';
-import {TASK_COUNT} from './const';
+import {TASK_COUNT, SHOWING_TASKS_COUNT_ON_START, SHOWING_TASKS_COUNT_BY_BUTTON} from './const';
 import {render} from './utils';
-
-
-const SHOWING_TASKS_COUNT_ON_START = 8;
-const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 
 
 const siteMainElement = document.querySelector(`.main`);

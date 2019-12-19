@@ -29,3 +29,34 @@ export const RenderPosition = {
   AFTERBEGIN: `afterbegin`,
   BEFOREEND: `beforeend`
 };
+
+export const filterTitles = [
+  `all`, `overdue`, `today`, `favorites`, `repeating`, `tags`, `archive`
+];
+
+export const SHOWING_TASKS_COUNT_ON_START = 8;
+export const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
+
+export const DescriptionItems = [
+  `Изучить теорию`,
+  `Сделать домашку`,
+  `Пройти интенсив на соточку`
+];
+
+export const DefaultRepeatingDays = {
+  'mo': false,
+  'tu': false,
+  'we': false,
+  'th': false,
+  'fr': false,
+  'sa': false,
+  'su': false
+};
+
+export const Tags = [
+  `homework`,
+  `theory`,
+  `practice`,
+  `intensive`,
+  `keks`
+];
